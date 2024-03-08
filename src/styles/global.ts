@@ -1,43 +1,35 @@
 import { createGlobalStyle } from "styled-components";
 import OpenSansRegular from "../fonts/OpenSans-Regular.ttf";
 import OpenSansSemiBold from "../fonts/OpenSans-SemiBold.ttf";
-import OpenSansMedium from "../fonts/OpenSans-Medium.ttf";
 import OpenSansBold from "../fonts/OpenSans-Bold.ttf";
 import OpenSansExtraBold from "../fonts/OpenSans-ExtraBold.ttf";
 
 const GlobalStyles = createGlobalStyle`
   @font-face {
-    font-family: 'Open Sans';
+    font-family: 'Open Sans Regular';
     font-style: normal;
     font-weight: 400;
     src: url(${OpenSansRegular}) format('truetype');
   }
 
   @font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: 600; 
-    src: url(${OpenSansMedium}) format('truetype');
-  }
-
-  @font-face {
-    font-family: 'Open Sans';
+    font-family: 'Open Sans Bold';
     font-style: normal;
     font-weight: 700;
     src: url(${OpenSansBold}) format('truetype');
   }
 
   @font-face {
-    font-family: 'Open Sans';
+    font-family: 'Open Sans Extra Bold';
     font-style: normal;
-    font-weight: 800; /* Defina o peso da fonte Extra Bold */
+    font-weight: 800;
     src: url(${OpenSansExtraBold}) format('truetype');
   }
 
   @font-face {
-    font-family: 'Open Sans';
+    font-family: 'Open Sans Semi Bold';
     font-style: normal;
-    font-weight: 600; /* Defina o peso da fonte Semi Bold */
+    font-weight: 600;
     src: url(${OpenSansSemiBold}) format('truetype');
   }
 
