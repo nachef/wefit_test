@@ -1,22 +1,32 @@
 import * as C from "./styles";
+import React, { ButtonHTMLAttributes } from "react";
 
-interface ButtonProps {
+export type ButtonProps = {
   counter?: number;
   title?: string;
   width?: string;
   height?: string;
   color?: string;
   text?: string;
-}
+  onClick?: () => void;
+  icon?: React.ReactNode;
+} & ButtonHTMLAttributes<HTMLButtonElement>;
 
 function Button({
   title,
   width = "auto",
   height = "auto",
   color = "",
+  onClick,
 }: ButtonProps) {
   return (
-    <C.Button width={width} height={height} color={color} title={title}>
+    <C.Button
+      width={width}
+      height={height}
+      color={color}
+      title={title}
+      onClick={onClick}
+    >
       {title}
     </C.Button>
   );

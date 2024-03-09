@@ -1,4 +1,9 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const spin = keyframes`
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+`;
 
 export const Icon = styled.div`
   width: 62.25px;
@@ -7,4 +12,7 @@ export const Icon = styled.div`
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  img {
+    animation: ${spin} 2s linear infinite;
+  }
 `;

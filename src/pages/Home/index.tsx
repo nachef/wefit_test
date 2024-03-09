@@ -4,6 +4,7 @@ import NoContent from "../../components/NoContent";
 import * as C from "./styles";
 import LoadingSpinner from "../../components/LoadingSpinner";
 import api from "../../services/api";
+import MoviesContent from "../../components/MoviesContent";
 
 interface Product {
   id: number;
@@ -17,11 +18,7 @@ function Home() {
   const [data, setData] = useState<Product[]>([]);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      fetchData();
-    }, 2000);
-
-    return () => clearTimeout(timer);
+    fetchData();
   }, []);
 
   const fetchData = async () => {
@@ -38,17 +35,13 @@ function Home() {
   return (
     <>
       <C.FullScreenContainer>
-        <Header />
+        <Header title="WeMovies" />
         {loading ? (
           <LoadingSpinner />
         ) : data.length == 0 ? (
-          <NoContent />
+          <NoContent title={"Parece que não há nada por aqui :("} />
         ) : (
-          <div>
-            {data.map((product) => (
-              <div key={product.id}>{product.title}</div>
-            ))}
-          </div>
+          <MoviesContent movies={data} />
         )}
       </C.FullScreenContainer>
     </>

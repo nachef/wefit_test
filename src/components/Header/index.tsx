@@ -1,10 +1,17 @@
+import CartButton from "../CartButton";
 import * as C from "./styles";
-function Header() {
+
+interface HeaderProps {
+  title: string;
+}
+
+const Header: React.FC<HeaderProps> = ({ title }) => {
   return (
     <C.Container>
-      <C.Title>WeMovies</C.Title>
+      <C.Title>{title}</C.Title>
+      <CartButton />
     </C.Container>
   );
-}
+};
 
 export default Header;
