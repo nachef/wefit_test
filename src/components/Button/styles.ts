@@ -14,7 +14,7 @@ export const Button = styled.button<ButtonProps>`
   padding: 8px;
   gap: 12px;
   background-color: ${({ color }) => color};
-  color: #ffffff;
+  color: ${({ theme }) => theme.fonts.colors.primary};
   font-size: 12px;
   cursor: pointer;
   font-family: "Open Sans Bold";

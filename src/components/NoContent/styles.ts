@@ -1,11 +1,21 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 70%;
-  height: 75vh;
+  width: 100%;
+  max-width: 1200px;
+  height: 80vh;
   margin: 0 auto;
   background-color: ${({ theme }) => theme.colors.secondary};
   border-radius: 4px;
+  padding: 0 24px;
+  box-sizing: border-box;
+
+  @media (max-width: 1200px) {
+    width: 80%;
+  }
+  @media (max-width: 768px) {
+    width: 80%;
+  }
 `;
 
 export const ContentWrapper = styled.div`

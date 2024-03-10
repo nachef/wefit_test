@@ -7,12 +7,10 @@ export const Container = styled.div`
   width: 338.67px;
   border-radius: 4px;
   padding: 16px;
-  gap: 16px;
   background-color: ${({ theme }) => theme.colors.secondary};
 `;
 
 export const ImageSection = styled.div`
-  width: 306.67px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,7 +28,6 @@ export const Label = styled.div`
 `;
 
 export const Title = styled.h2`
-  width: 296px;
   font-family: "Open Sans Bold";
   font-size: 12px;
   text-align: center;

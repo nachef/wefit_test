@@ -6,11 +6,16 @@ import { useCart } from "../../contexts/CartContext";
 function CartButton() {
   const { cartItems } = useCart();
 
+  const totalQuantity = cartItems.reduce(
+    (total, item) => total + item.quantity,
+    0
+  );
+
   return (
     <C.Container>
       <C.Label>
         <C.Text>Meu Carrinho</C.Text>
-        <C.Counter>{cartItems.length} itens</C.Counter>
+        <C.Counter>{totalQuantity} itens</C.Counter>
       </C.Label>
       <Link to="/carrinho">
         <C.Icon>

@@ -27,7 +27,9 @@ function Home() {
     try {
       const responseData = await api.getProducts();
       setData(responseData);
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 2000); // 2 segundos de timeout apenas para simular o carregamento de dados
     } catch (error) {
       console.error("Erro ao buscar produtos:", error);
       setLoading(false);

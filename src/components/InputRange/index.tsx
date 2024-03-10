@@ -15,26 +15,26 @@ function InputRange({ value, onValueChange }: InputRangeProps) {
   };
 
   const handleDecrement = () => {
-    if (value > 0) {
+    if (value > 1) {
       onValueChange(value - 1);
     }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newValue = Number(e.target.value);
-    if (newValue >= 0 && newValue <= 5) {
+    if (newValue >= 1 && newValue <= 5) {
       onValueChange(newValue);
     }
   };
 
   return (
     <C.Container>
-      <C.Button onClick={handleDecrement} disabled={value <= 0}>
+      <C.Button onClick={handleDecrement} disabled={value <= 1}>
         <img src={minusIcon} alt="Decrement" />
       </C.Button>
       <C.Input
         type="number"
-        min="0"
+        min="1"
         max="5"
         value={value}
         onChange={handleChange}
