@@ -44,6 +44,7 @@ function MovieCard({ id, title, price, image }: MovieProps) {
         counter={counter}
         selected={isSelected}
         id={String(id)}
+        disabled={counter >= 5}
       />
     </C.Container>
   );

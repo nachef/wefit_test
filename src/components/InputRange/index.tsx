@@ -9,7 +9,9 @@ interface InputRangeProps {
 
 function InputRange({ value, onValueChange }: InputRangeProps) {
   const handleIncrement = () => {
-    onValueChange(value + 1);
+    if (value < 5) {
+      onValueChange(value + 1);
+    }
   };
 
   const handleDecrement = () => {
@@ -18,17 +20,26 @@ function InputRange({ value, onValueChange }: InputRangeProps) {
     }
   };
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newValue = Number(e.target.value);
+    if (newValue >= 0 && newValue <= 5) {
+      onValueChange(newValue);
+    }
+  };
+
   return (
     <C.Container>
-      <C.Button onClick={handleDecrement}>
+      <C.Button onClick={handleDecrement} disabled={value <= 0}>
         <img src={minusIcon} alt="Decrement" />
       </C.Button>
       <C.Input
         type="number"
+        min="0"
+        max="5"
         value={value}
-        onChange={(e) => onValueChange(Number(e.target.value))}
+        onChange={handleChange}
       />
-      <C.Button onClick={handleIncrement}>
+      <C.Button onClick={handleIncrement} disabled={value >= 5}>
         <img src={plusIcon} alt="Increment" />
       </C.Button>
     </C.Container>

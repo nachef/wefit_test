@@ -7,10 +7,16 @@ export const Container = styled.div`
 `;
 
 export const Button = styled.button`
+  cursor: pointer;
   border: none;
   background: none;
   padding: 0;
   margin: 0;
+
+  &:disabled img {
+    cursor: default;
+    filter: grayscale(100%);
+  }
 `;
 
 export const Input = styled.input`

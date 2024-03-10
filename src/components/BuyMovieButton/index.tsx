@@ -8,6 +8,7 @@ export type ButtonProps = {
   text?: string;
   onClick?: () => void;
   selected?: boolean;
+  disabled: boolean;
 } & ButtonHTMLAttributes<HTMLButtonElement>;
 
 function BuyMovieButton({
@@ -15,9 +16,15 @@ function BuyMovieButton({
   title,
   onClick,
   selected = false,
+  disabled,
 }: ButtonProps) {
   return (
-    <C.Button title={title} onClick={onClick} selected={selected}>
+    <C.Button
+      title={title}
+      onClick={onClick}
+      selected={selected}
+      disabled={disabled}
+    >
       <img src={BuyMovieIcon} alt="Buy Movie Icon" /> {counter}
       <C.Title>{title}</C.Title>
     </C.Button>
