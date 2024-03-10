@@ -1,4 +1,3 @@
-// MoviesContent.tsx
 import * as C from "./styles";
 import MovieCard from "../MovieCard";
 

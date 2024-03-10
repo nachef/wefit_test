@@ -1,18 +1,20 @@
-import { useState } from "react";
 import * as C from "./styles";
 import minusIcon from "../../assets/icons/minus.svg";
 import plusIcon from "../../assets/icons/plus.svg";
 
-function InputRange() {
-  const [value, setValue] = useState(0);
+interface InputRangeProps {
+  value: number;
+  onValueChange: (newValue: number) => void;
+}
 
+function InputRange({ value, onValueChange }: InputRangeProps) {
   const handleIncrement = () => {
-    setValue((prevValue) => prevValue + 1);
+    onValueChange(value + 1);
   };
 
   const handleDecrement = () => {
     if (value > 0) {
-      setValue((prevValue) => prevValue - 1);
+      onValueChange(value - 1);
     }
   };
 
@@ -24,7 +26,7 @@ function InputRange() {
       <C.Input
         type="number"
         value={value}
-        onChange={(e) => setValue(Number(e.target.value))}
+        onChange={(e) => onValueChange(Number(e.target.value))}
       />
       <C.Button onClick={handleIncrement}>
         <img src={plusIcon} alt="Increment" />

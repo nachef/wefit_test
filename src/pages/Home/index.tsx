@@ -5,6 +5,8 @@ import * as C from "./styles";
 import LoadingSpinner from "../../components/LoadingSpinner";
 import api from "../../services/api";
 import MoviesContent from "../../components/MoviesContent";
+import NoContentImage from "../../assets/images/no-content-image.png";
+import NoContentImageMobile from "../../assets/images/no-content-mobile.png";
 
 interface Product {
   id: number;
@@ -39,7 +41,13 @@ function Home() {
         {loading ? (
           <LoadingSpinner />
         ) : data.length == 0 ? (
-          <NoContent title={"Parece que não há nada por aqui :("} />
+          <NoContent
+            title={"Parece que não há nada por aqui :("}
+            imageDesktop={NoContentImage}
+            imageMobile={NoContentImageMobile}
+            buttonTitle={"Recarregar página"}
+            onButtonClick={() => window.location.reload()}
+          />
         ) : (
           <MoviesContent movies={data} />
         )}

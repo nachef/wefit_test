@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import BuyMovieButton from "../BuyMovieButton";
 import * as C from "./styles";
+import { useCart } from "../../contexts/CartContext";
 
 interface MovieProps {
   id: number;
@@ -10,13 +11,22 @@ interface MovieProps {
 }
 
 function MovieCard({ id, title, price, image }: MovieProps) {
-  const [counter, setCounter] = useState(0);
-  const [isSelected, setIsSelected] = useState(false);
+  const { addToCart, isInCart, cartItems } = useCart();
+  const movieInCart = cartItems.find((movie) => movie.id === id);
+  const initialCounter = movieInCart ? movieInCart.quantity : 0;
+  const [counter, setCounter] = useState(initialCounter);
+  const [isSelected, setIsSelected] = useState(isInCart(id));
 
-  const handleClick = () => {
+  useEffect(() => {
+    const updatedMovieInCart = cartItems.find((movie) => movie.id === id);
+    if (updatedMovieInCart) {
+      setCounter(updatedMovieInCart.quantity);
+    }
+  }, [cartItems, id]);
+
+  const handleBuyMovie = () => {
     setIsSelected(true);
-    setCounter(counter + 1);
-    console.log("Movie ID:", id);
+    addToCart({ id, title, price, image, quantity: 1 });
   };
 
   return (
@@ -30,7 +40,7 @@ function MovieCard({ id, title, price, image }: MovieProps) {
       </C.Label>
       <BuyMovieButton
         title="ADICIONAR AO CARRINHO"
-        onClick={handleClick}
+        onClick={handleBuyMovie}
         counter={counter}
         selected={isSelected}
         id={String(id)}

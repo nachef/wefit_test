@@ -2,14 +2,22 @@
 import { useState, useEffect } from "react";
 import Button from "../Button";
 import * as C from "./styles";
-import NoContentImage from "../../assets/images/no-content-image.png";
-import NoContentImageMobile from "../../assets/images/no-content-mobile.png";
 
-interface NoContentProps {
+export type NoContentProps = {
   title: string;
-}
+  imageDesktop: string;
+  imageMobile: string;
+  buttonTitle: string;
+  onButtonClick?: () => void;
+};
 
-function NoContent({ title }: NoContentProps) {
+function NoContent({
+  title,
+  imageDesktop,
+  imageMobile,
+  buttonTitle,
+  onButtonClick,
+}: NoContentProps) {
   const [isMobile, setIsMobile] = useState(
     window.matchMedia("(max-width: 768px)").matches
   );
@@ -24,11 +32,7 @@ function NoContent({ title }: NoContentProps) {
     };
   }, []);
 
-  const imageSrc = isMobile ? NoContentImageMobile : NoContentImage;
-
-  const handleButtonClick = () => {
-    window.location.reload();
-  };
+  const imageSrc = isMobile ? imageMobile : imageDesktop;
 
   return (
     <C.Container>
@@ -43,8 +47,8 @@ function NoContent({ title }: NoContentProps) {
           width="173px"
           height="40px"
           color="#009EDD"
-          title="Recarregar página"
-          onClick={handleButtonClick}
+          title={buttonTitle}
+          onClick={onButtonClick}
         />
       </C.ContentWrapper>
     </C.Container>

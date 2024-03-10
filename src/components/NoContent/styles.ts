@@ -9,7 +9,8 @@ export const Container = styled.div`
 `;
 
 export const ContentWrapper = styled.div`
-  padding-top: 64px;
+  box-sizing: border-box;
+  padding: 64px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
