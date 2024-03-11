@@ -26,6 +26,7 @@ Technologies used in the project developmemt:
 - [React-Dom](https://pt-br.reactjs.org/docs/react-dom.html)
 - [Styled-Components](https://www.styled-components.com/)
 - [Axios](https://axios-http.com/)
+- [Jest](https://jestjs.io/)
 - [ESLint](https://eslint.org/)
 - [Prettier](https://prettier.io/)
 
