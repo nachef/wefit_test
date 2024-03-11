@@ -1,30 +1,63 @@
-# React + TypeScript + Vite
+<p align="center">
+    <h1 align="center">WeFit Teste</h1>
+  </a>
+</p>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ <p align="center">
+    <!-- Edge -->
+    <img alt="Supports Edge" longdesc="Supports Edge" src="https://img.shields.io/badge/iOS-000.svg?style=flat-square&logo=MICROSOFT-EDGE&labelColor=0078D7&logoColor=fff" />
+    <!-- Firefox -->
+    <img alt="Supports Firefox" longdesc="Supports Firefox" src="https://img.shields.io/badge/Android-000.svg?style=flat-square&logo=FIREFOX&labelColor=FF7139&logoColor=fff" />
+    <!-- Chrome -->
+    <img alt="Supports Chrome" longdesc="Supports Chrome" src="https://img.shields.io/badge/web-000.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
+     <!-- Vivaldi -->
+    <img alt="Supports Vivaldi" longdesc="Supports Vivaldi" src="https://img.shields.io/badge/web-000.svg?style=flat-square&logo=VIVALDI&labelColor=EF3939&logoColor=fff" />
+     <!-- Opera -->
+    <img alt="Supports Opera" longdesc="Supports Opera" src="https://img.shields.io/badge/web-000.svg?style=flat-square&logo=OPERA&labelColor=FF1B2D&logoColor=fff" />
+     <!-- Safari -->
+    <img alt="Supports Safari" longdesc="Supports Safari" src="https://img.shields.io/badge/web-000.svg?style=flat-square&logo=SAFARI&labelColor=000000&logoColor=fff" />
+  </p>
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Technologies used in the project developmemt:
 
-## Expanding the ESLint configuration
+- [React](https://pt-br.reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [React-Dom](https://pt-br.reactjs.org/docs/react-dom.html)
+- [Styled-Components](https://www.styled-components.com/)
+- [Axios](https://axios-http.com/)
+- [ESLint](https://eslint.org/)
+- [Prettier](https://prettier.io/)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+## Getting Started
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+Installation
+
+```bash
+$ npm install
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+First, run the development server:
+
+```bash
+# run development
+npm run dev
+
+# build production
+$ npm run build
+
+# run production
+$ npm run start
+```
+
+To run Tests:
+
+```bash
+$ npm test
+```
+
+## License
+
+This project is under the MIT license. See the [LICENSE]() for more information.
