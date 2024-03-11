@@ -2,10 +2,10 @@ import { useCart } from "../../contexts/CartContext";
 import CartContent from "../../components/CartContent";
 import NoContent from "../../components/NoContent";
 import Header from "../../components/Header";
-import * as C from "./styles";
-import NoContentImage from "../../assets/images/no-content-image.png";
-import NoContentImageMobile from "../../assets/images/no-content-mobile.png";
+import NoContentImage from "../../assets/images/no-content-image.svg";
+import NoContentImageMobile from "../../assets/images/no-content-mobile.svg";
 import { useRedirect } from "../../hooks/useRedirect";
+import Container from "../../components/Container";
 
 function Cart() {
   const { cartItems } = useCart();
@@ -13,22 +13,20 @@ function Cart() {
   const { redirectToHome } = useRedirect();
 
   return (
-    <>
-      <C.FullScreenContainer>
-        <Header title="WeMovies" />
-        {cartItems.length > 0 ? (
-          <CartContent />
-        ) : (
-          <NoContent
-            title={"Parece que não há nada por aqui :("}
-            imageDesktop={NoContentImage}
-            imageMobile={NoContentImageMobile}
-            buttonTitle={"VOLTAR"}
-            onButtonClick={redirectToHome}
-          />
-        )}
-      </C.FullScreenContainer>
-    </>
+    <Container>
+      <Header title="WeMovies" />
+      {cartItems.length > 0 ? (
+        <CartContent />
+      ) : (
+        <NoContent
+          title={"Parece que não há nada por aqui :("}
+          imageDesktop={NoContentImage}
+          imageMobile={NoContentImageMobile}
+          buttonTitle={"VOLTAR"}
+          onButtonClick={redirectToHome}
+        />
+      )}
+    </Container>
   );
 }
 

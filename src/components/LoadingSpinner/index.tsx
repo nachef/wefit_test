@@ -3,7 +3,7 @@ import LoadingSVG from "../../assets/images/load-spinner.png";
 
 function LoadingSpinner() {
   return (
-    <Icon className="loading-spinner">
+    <Icon>
       <img src={LoadingSVG} alt="Loading spinner" />
     </Icon>
   );

@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import Header from "../../components/Header";
 import NoContent from "../../components/NoContent";
-import * as C from "./styles";
 import LoadingSpinner from "../../components/LoadingSpinner";
 import api from "../../services/api";
 import MoviesContent from "../../components/MoviesContent";
-import NoContentImage from "../../assets/images/no-content-image.png";
-import NoContentImageMobile from "../../assets/images/no-content-mobile.png";
+import NoContentImage from "../../assets/images/no-content-image.svg";
+import NoContentImageMobile from "../../assets/images/no-content-mobile.svg";
+import Container from "../../components/Container";
 
 interface Product {
   id: number;
@@ -37,24 +37,22 @@ function Home() {
   };
 
   return (
-    <>
-      <C.FullScreenContainer>
-        <Header title="WeMovies" />
-        {loading ? (
-          <LoadingSpinner />
-        ) : data.length == 0 ? (
-          <NoContent
-            title={"Parece que não há nada por aqui :("}
-            imageDesktop={NoContentImage}
-            imageMobile={NoContentImageMobile}
-            buttonTitle={"Recarregar página"}
-            onButtonClick={() => window.location.reload()}
-          />
-        ) : (
-          <MoviesContent movies={data} />
-        )}
-      </C.FullScreenContainer>
-    </>
+    <Container>
+      <Header title="WeMovies" />
+      {loading ? (
+        <LoadingSpinner />
+      ) : data.length == 0 ? (
+        <NoContent
+          title={"Parece que não há nada por aqui :("}
+          imageDesktop={NoContentImage}
+          imageMobile={NoContentImageMobile}
+          buttonTitle={"Recarregar página"}
+          onButtonClick={() => window.location.reload()}
+        />
+      ) : (
+        <MoviesContent movies={data} />
+      )}
+    </Container>
   );
 }
 

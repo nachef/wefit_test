@@ -3,8 +3,6 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  width: 143.95px;
-  height: 40px;
   gap: 8px;
 
   @media (max-width: 768px) {
@@ -40,7 +38,6 @@ export const Counter = styled.div`
   align-self: self-end;
   color: ${({ theme }) => theme.fonts.colors.secondary};
   font-family: "Open Sans Semi Bold";
-  width: 41.98px;
   height: 19px;
   font-size: 12px;
 `;

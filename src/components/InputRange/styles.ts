@@ -20,7 +20,7 @@ export const Button = styled.button`
 `;
 
 export const Input = styled.input`
-  width: 62px;
+  width: 59px;
   height: 26px;
   border-radius: 4px;
   border: 1px solid #d9d9d9;
@@ -31,7 +31,7 @@ export const Input = styled.input`
   outline: none;
   box-shadow: none;
 
-  /* Firefox */
+  @m /* Firefox */
   &::-moz-focus-inner {
     border: 0;
   }

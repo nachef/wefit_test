@@ -1,11 +1,12 @@
-// styles.ts
 import styled from "styled-components";
 
 interface ButtonProps {
   selected?: boolean;
 }
+
 export const Button = styled.button<ButtonProps>`
-  width: 280px;
+  margin-top: auto;
+  width: 100%;
   height: 40px;
   border: none;
   border-radius: 4px;
@@ -22,4 +23,9 @@ export const Title = styled.span`
   margin-left: 12px;
   font-family: "Open Sans Bold";
   font-size: 12px;
+`;
+
+export const Icon = styled.img`
+  margin-right: 3px;
+  transform: translateY(3px);
 `;

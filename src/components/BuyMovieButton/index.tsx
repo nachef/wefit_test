@@ -25,7 +25,8 @@ function BuyMovieButton({
       selected={selected}
       disabled={disabled}
     >
-      <img src={BuyMovieIcon} alt="Buy Movie Icon" /> {counter}
+      <C.Icon src={BuyMovieIcon} alt="Buy Movie Icon" />
+      {counter}
       <C.Title>{title}</C.Title>
     </C.Button>
   );

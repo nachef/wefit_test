@@ -14,8 +14,8 @@ export type ButtonProps = {
 
 function Button({
   title,
-  width = "auto",
-  height = "auto",
+  width = "100%",
+  height = "40px",
   color = "",
   onClick,
 }: ButtonProps) {

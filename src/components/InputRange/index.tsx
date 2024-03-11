@@ -8,6 +8,15 @@ interface InputRangeProps {
 }
 
 function InputRange({ value, onValueChange }: InputRangeProps) {
+  //corrige o valor inicial se estiver fora do intervalo permitido
+  if (value < 1) {
+    value = 1;
+    onValueChange(value);
+  } else if (value > 5) {
+    value = 5;
+    onValueChange(value);
+  }
+
   const handleIncrement = () => {
     if (value < 5) {
       onValueChange(value + 1);

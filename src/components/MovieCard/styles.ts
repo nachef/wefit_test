@@ -5,8 +5,9 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   width: 338.67px;
+  max-height: 300px;
   border-radius: 4px;
-  padding: 16px;
+  padding: 16px 16px;
   background-color: ${({ theme }) => theme.colors.secondary};
 `;
 
@@ -27,18 +28,19 @@ export const Label = styled.div`
   align-items: center;
 `;
 
-export const Title = styled.h2`
+export const Title = styled.a`
+  margin-top: 8px;
   font-family: "Open Sans Bold";
   font-size: 12px;
   text-align: center;
   color: ${({ theme }) => theme.fonts.colors.tertiary};
 `;
 
-export const Price = styled.p`
+export const Price = styled.a`
+  margin-top: 8px;
   font-family: "Open Sans Bold";
   font-size: 16px;
   text-align: center;
   color: ${({ theme }) => theme.colors.background};
-  margin-top: -2px;
   margin-bottom: 8px;
 `;
